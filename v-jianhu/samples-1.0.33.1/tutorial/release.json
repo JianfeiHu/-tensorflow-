@@ -1,0 +1,50 @@
+{
+  "channels": {
+    "master": [
+      "tutorial-img-train",
+      "tutorial-img-deploy",
+      "tutorial-dprep-1",
+      "tutorial-regression-part2"
+    ],
+    "preview": [
+      "tutorial-img-train",
+      "tutorial-img-deploy",
+      "tutorial-dprep-1",
+      "tutorial-regression-part2"
+    ],
+    "notebook-automation": [
+      "tutorial-img-train",
+      "tutorial-img-deploy",
+      "tutorial-dprep-1"
+    ]
+  },
+
+  "notebooks": {
+    "tutorial-img-train": {
+      "name": "img-classification-part1-training.ipynb",
+      "widgets": [ "azureml.widgets" ],
+      "dependencies": [ "utils.py" ],
+      "requirements": ["azureml-widgets", "matplotlib", "sklearn" ],
+      "celltimeout": 2700
+    },
+    "tutorial-img-deploy": {
+      "name": "img-classification-part2-deploy.ipynb",
+      "widgets": [],
+      "dependencies": [ "utils.py", "sklearn_mnist_model.pkl" ],
+      "requirements": [ "matplotlib", "sklearn" ]
+    },
+    "tutorial-dprep-1": {
+      "name": "regression-part1-data-prep.ipynb",
+      "widgets": [],
+      "dependencies": [],
+      "requirements": [ "azureml-dataprep[pandas]>=1.1.2,<1.2.0" ]
+    },
+    "tutorial-regression-part2": {
+      "name": "regression-part2-automated-ml.ipynb",
+      "widgets": [ "azureml.widgets" ],
+      "dependencies": [ "dflows.dprep" ],
+      "requirements": [ "azureml-train-automl", "azureml-widgets", "azureml-explain-model", "matplotlib", "pandas_ml", "seaborn" ]
+    }
+  },
+  "uploads": ["README.md"]
+}
